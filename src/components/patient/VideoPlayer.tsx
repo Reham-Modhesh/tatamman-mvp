@@ -36,7 +36,7 @@ export default function VideoPlayer({ title, durationMinutes = 3 }: Props) {
           if (progress >= 100) setProgress(0)
           setPlaying((p) => !p)
         }}
-        className="relative grid aspect-video w-full place-items-center bg-linear-to-br from-[#0c3a20] via-sh-bg to-[#1d2a2f]"
+        className="relative grid aspect-video w-full place-items-center bg-linear-to-br from-[#0c3a20] via-[#0f121c] to-[#1d2a2f]"
         aria-label={playing ? 'إيقاف الفيديو' : 'تشغيل الفيديو'}
       >
         <div className="absolute inset-0 opacity-20 [background:radial-gradient(circle_at_30%_30%,white,transparent_45%)]" />

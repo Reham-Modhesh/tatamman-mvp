@@ -28,7 +28,7 @@ export default function AiMatchingEngine({ note, stage, matches, librarySize, se
   const running = stage < ANALYSIS_DONE
 
   return (
-    <section className="rounded-2xl border border-violet-200 bg-white shadow-sm">
+    <section className="rounded-2xl border border-violet-200 bg-surface shadow-sm">
       <div className="flex flex-wrap items-center justify-between gap-2 border-b border-violet-100 px-5 py-4">
         <div className="flex items-center gap-3">
           <div className="grid size-10 place-items-center rounded-xl bg-violet-100 text-violet-700">
@@ -88,12 +88,12 @@ export default function AiMatchingEngine({ note, stage, matches, librarySize, se
                   <span className="font-semibold">{ENTITY_STYLES[e.type].label}:</span>
                   {e.labelAr}
                   {e.code && (
-                    <span dir="ltr" className="rounded bg-white/70 px-1 font-mono text-[11px]">
+                    <span dir="ltr" className="rounded bg-surface/70 px-1 font-mono text-[11px]">
                       {e.code}
                     </span>
                   )}
                   {e.code === note.diagnosis.code && note.diagnosis.category && (
-                    <span dir="ltr" className="rounded bg-white/70 px-1 font-mono text-[11px]" title={note.diagnosis.categoryDescriptionEn}>
+                    <span dir="ltr" className="rounded bg-surface/70 px-1 font-mono text-[11px]" title={note.diagnosis.categoryDescriptionEn}>
                       ICD-10 {note.diagnosis.category}
                     </span>
                   )}
@@ -129,7 +129,7 @@ export default function AiMatchingEngine({ note, stage, matches, librarySize, se
                         onChange={() => onToggle(content.id)}
                         className="mt-1 size-4 accent-teal-600"
                       />
-                      <div className="grid size-9 shrink-0 place-items-center rounded-lg bg-white text-teal-700 ring-1 ring-slate-200">
+                      <div className="grid size-9 shrink-0 place-items-center rounded-lg bg-surface text-teal-700 ring-1 ring-slate-200">
                         <ContentTypeIcon type={content.type} className="size-4.5" />
                       </div>
                       <div className="min-w-0 flex-1">

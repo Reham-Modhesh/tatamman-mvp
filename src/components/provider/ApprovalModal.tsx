@@ -26,8 +26,8 @@ export default function ApprovalModal({ note, contentCount, onCancel, onConfirm 
   }
 
   return (
-    <div className="fixed inset-0 z-50 grid place-items-center bg-slate-900/50 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="approve-title">
-      <div className="w-full max-w-md rounded-2xl bg-white shadow-xl">
+    <div className="fixed inset-0 z-50 grid place-items-center bg-black/50 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="approve-title">
+      <div className="w-full max-w-md rounded-2xl bg-surface shadow-xl">
         <div className="flex items-center justify-between border-b border-slate-100 px-5 py-4">
           <h2 id="approve-title" className="flex items-center gap-2 font-bold text-slate-900">
             <ShieldCheck className="size-5 text-teal-600" />
@@ -46,7 +46,7 @@ export default function ApprovalModal({ note, contentCount, onCancel, onConfirm 
                 <label
                   key={r}
                   className={`cursor-pointer rounded-lg py-2 text-center text-sm font-semibold transition ${
-                    role === r ? 'bg-white text-teal-700 shadow-sm' : 'text-slate-500 hover:text-slate-700'
+                    role === r ? 'bg-surface text-teal-700 shadow-sm' : 'text-slate-500 hover:text-slate-700'
                   }`}
                 >
                   <input type="radio" name="reviewer-role" value={r} checked={role === r} onChange={() => setRole(r)} disabled={submitting} className="sr-only" />
@@ -105,7 +105,7 @@ export default function ApprovalModal({ note, contentCount, onCancel, onConfirm 
           <button
             onClick={submit}
             disabled={!canSubmit}
-            className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-teal-600 px-4 py-2.5 font-semibold text-white transition hover:bg-teal-700 disabled:cursor-not-allowed disabled:bg-slate-300"
+            className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-teal-600 px-4 py-2.5 font-semibold text-white transition hover:bg-teal-500 disabled:cursor-not-allowed disabled:bg-slate-300"
           >
             {submitting ? <LoaderCircle className="size-5 animate-spin" /> : <ShieldCheck className="size-5" />}
             {submitting ? 'جارٍ النشر إلى صحتي…' : 'تأكيد الاعتماد والنشر'}

@@ -15,7 +15,7 @@ export default function RedFlagCard({ signs }: { signs: string[] }) {
         <p id="red-flags" className="text-[14px] text-sh-text">
           توجّه للطوارئ فوراً إذا ظهرت أي من هذه العلامات:
         </p>
-        <ul className="divide-y divide-white/10">
+        <ul className="divide-y divide-sh-danger/20">
           {signs.map((s) => (
             <li key={s} className="flex items-start gap-2.5 py-2 text-[14px] text-sh-text">
               <TriangleAlert className="mt-0.5 size-4 shrink-0 text-sh-danger" />

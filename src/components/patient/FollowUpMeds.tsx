@@ -49,7 +49,7 @@ export default function FollowUpMeds({ note }: { note: DischargeNote }) {
                   )}
                 </div>
               </div>
-              {appt.notesAr && <div className="rounded-sh-btn bg-sh-raised px-3 py-2 text-[13px] text-amber-200">{appt.notesAr}</div>}
+              {appt.notesAr && <div className="rounded-sh-btn bg-sh-raised px-3 py-2 text-[13px] text-sh-warn">{appt.notesAr}</div>}
               {added ? (
                 <div className="flex items-center justify-center gap-2 rounded-sh-btn border border-sh-line py-3 text-[15px] font-semibold text-sh-green-text">
                   <CalendarCheck className="size-5" />
@@ -68,7 +68,7 @@ export default function FollowUpMeds({ note }: { note: DischargeNote }) {
 
       <section className="space-y-3">
         <SectionHeader title="الأدوية والتذكيرات" />
-        <div className="divide-y divide-sh-divider rounded-sh-card border border-sh-line">
+        <div className="divide-y divide-sh-divider rounded-sh-card border border-sh-line bg-sh-card">
           {note.medications.map((med) => {
             const on = reminders.has(med.name)
             return (

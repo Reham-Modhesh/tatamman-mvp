@@ -18,7 +18,7 @@ export function SectionHeader({ title, action }: { title: string; action?: strin
 }
 
 export function Card({ className = '', ...props }: ComponentProps<'div'>) {
-  return <div className={`rounded-sh-card border border-sh-line p-4 ${className}`} {...props} />
+  return <div className={`rounded-sh-card border border-sh-line bg-sh-card p-4 ${className}`} {...props} />
 }
 
 export function IconTile({ icon: Icon, className = '' }: { icon: LucideIcon; className?: string }) {
@@ -60,7 +60,7 @@ export function SegmentedControl<T extends string>({
             aria-selected={active}
             onClick={() => onChange(o.id)}
             className={`rounded-[10px] px-1 py-2.5 text-[13px] font-bold transition ${
-              active ? 'bg-sh-segment-active text-sh-green-text' : 'bg-sh-segment text-[#d8dadd]'
+              active ? 'bg-sh-segment-active text-sh-green-text' : 'bg-sh-segment text-sh-segment-text'
             }`}
           >
             {o.label}

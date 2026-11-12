@@ -22,7 +22,7 @@ export default function MediaHub({ items }: { items: MohContent[] }) {
       <SectionHeader title="المحتوى التثقيفي" />
       <p className="text-[13px] text-sh-subtle">محتوى معتمد اختاره فريقك الصحي خصيصاً لحالتك.</p>
       {items.map((c) => (
-        <article key={c.id} className="overflow-hidden rounded-sh-card border border-sh-line">
+        <article key={c.id} className="overflow-hidden rounded-sh-card border border-sh-line bg-sh-card">
           {c.type === 'video' && (
             <div className="p-2 pb-0">
               <VideoPlayer title={c.titleAr} durationMinutes={c.durationMinutes} />

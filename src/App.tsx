@@ -3,6 +3,7 @@ import type { KitState, ReviewerRole, View } from './types'
 import { dischargeNotes, mohContent } from './data'
 import { defaultSelection } from './lib/matching'
 import { reviewerFor } from './lib/roles'
+import { useTheme } from './lib/theme'
 import SimulatorBar from './components/SimulatorBar'
 import ProviderPortal from './components/provider/ProviderPortal'
 import PatientView from './components/patient/PatientView'
@@ -33,6 +34,7 @@ export default function App() {
   const [view, setView] = useState<View>('patient')
   const [selectedId, setSelectedId] = useState(dischargeNotes[0].id)
   const [kits, setKits] = useState(initialKits)
+  const { theme, toggle: toggleTheme } = useTheme()
 
   const updateKit = (noteId: string, update: (kit: KitState) => KitState) =>
     setKits((all) => ({ ...all, [noteId]: update(all[noteId]) }))
@@ -65,7 +67,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen">
-      <SimulatorBar view={view} onChange={switchView} />
+      <SimulatorBar view={view} onChange={switchView} theme={theme} onToggleTheme={toggleTheme} />
       {view === 'provider' ? (
         <ProviderPortal
           notes={dischargeNotes}

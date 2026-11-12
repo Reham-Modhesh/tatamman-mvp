@@ -2,27 +2,125 @@
 
 @theme {
   --font-sans: "IBM Plex Sans Arabic", system-ui, sans-serif;
-  /* Sehhaty tokens, pixel-sampled from the official app (dark theme, ملفي tab). */
-  --color-sh-bg: #0f121c;          /* page background */
-  --color-sh-raised: #202f2c;      /* filled cards (شركاؤنا), inner panels */
-  --color-sh-banner: #0f1d23;      /* promo banner (التوأم الرقمي) */
-  --color-sh-tile: #0f1d23;        /* icon tile behind list-row icons */
-  --color-sh-pill: #232733;        /* segmented-control track */
-  --color-sh-segment: #353944;     /* inactive segment */
-  --color-sh-segment-active: #0f121c;
-  --color-sh-line: #76a28c;        /* 1px outline of cards and tiles */
-  --color-sh-divider: #567769;     /* separator between list rows */
-  --color-sh-nav-line: #353944;    /* hairline above the bottom nav */
-  --color-sh-green: #55bf8a;       /* primary green: links, icons, buttons, avatar */
-  --color-sh-green-text: #55bf8a;
-  --color-sh-text: #f4f4f6;        /* titles and row labels */
-  --color-sh-muted: #d6d8dd;       /* secondary copy */
-  --color-sh-subtle: #8b8b8b;      /* inactive nav icons, meta text */
-  --color-sh-danger: #e8786b;      /* emergency (997) button */
-  --color-sh-nav-active: #01000a;  /* active bottom-nav pill */
+  /* Sehhaty tokens. Defaults are the light theme; the dark theme (sampled from the
+     official app's dark mode) overrides them under [data-theme="dark"] below. */
+  --color-sh-bg: #f4f6f5;          /* page background */
+  --color-sh-card: #ffffff;        /* outlined cards */
+  --color-sh-raised: #edf3f0;      /* filled inner panels */
+  --color-sh-banner: #e3f1e9;      /* promo banner */
+  --color-sh-tile: #e3f2ea;        /* icon tile behind list-row icons */
+  --color-sh-pill: #e8ebee;        /* segmented-control track */
+  --color-sh-segment: #e8ebee;     /* inactive segment */
+  --color-sh-segment-active: #ffffff;
+  --color-sh-segment-text: #4a5260;
+  --color-sh-line: #a8d3bb;        /* 1px outline of cards and tiles */
+  --color-sh-divider: #e2ebe6;     /* separator between list rows */
+  --color-sh-nav-line: #e1e4e8;    /* hairline above the bottom nav */
+  --color-sh-green: #239163;       /* primary green fill (white text stays readable) */
+  --color-sh-green-text: #1d8459;  /* green links, icons, active tab */
+  --color-sh-text: #1a1f2b;
+  --color-sh-muted: #4a5260;
+  --color-sh-subtle: #7a818c;
+  --color-sh-danger: #d64a3c;      /* emergency (997) */
+  --color-sh-warn: #b45309;        /* "pending approval" text */
+  --color-sh-nav-active: #e3f2ea;  /* active bottom-nav pill */
+  /* Surface for portal cards and the top bar: white in light, dark slate in dark. */
+  --color-surface: #ffffff;
   --radius-sh-card: 14px;
   --radius-sh-btn: 10px;
   --radius-sh-tile: 8px;
+}
+
+/* ---------- Dark theme ---------- */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Sehhaty dark tokens, pixel-sampled from the official app (ملفي tab). */
+  --color-sh-bg: #0f121c;
+  --color-sh-card: #0f121c;
+  --color-sh-raised: #202f2c;
+  --color-sh-banner: #0f1d23;
+  --color-sh-tile: #0f1d23;
+  --color-sh-pill: #232733;
+  --color-sh-segment: #353944;
+  --color-sh-segment-active: #0f121c;
+  --color-sh-segment-text: #d8dadd;
+  --color-sh-line: #76a28c;
+  --color-sh-divider: #567769;
+  --color-sh-nav-line: #353944;
+  --color-sh-green: #55bf8a;
+  --color-sh-green-text: #55bf8a;
+  --color-sh-text: #f4f4f6;
+  --color-sh-muted: #d6d8dd;
+  --color-sh-subtle: #8b8b8b;
+  --color-sh-danger: #e8786b;
+  --color-sh-warn: #fcd34d;
+  --color-sh-nav-active: #01000a;
+  --color-surface: #111827;
+
+  /* Portal palette swap: Tailwind v4 reads every colour from these variables, so the
+     light-mode classes (bg-teal-50, text-slate-700, ...) flip to dark equivalents here.
+     Tints (50-200) become dark tints, deep shades (700-950) become light text colours,
+     and the 300-600 accents used for solid fills stay as they are. */
+  --color-teal-50: color-mix(in oklab, #14b8a6 10%, #111827);
+  --color-teal-100: color-mix(in oklab, #14b8a6 18%, #111827);
+  --color-teal-200: color-mix(in oklab, #14b8a6 34%, #111827);
+  --color-teal-700: color-mix(in oklab, #14b8a6 72%, #ffffff);
+  --color-teal-800: color-mix(in oklab, #14b8a6 58%, #ffffff);
+  --color-teal-900: color-mix(in oklab, #14b8a6 45%, #ffffff);
+  --color-teal-950: color-mix(in oklab, #14b8a6 35%, #ffffff);
+  --color-emerald-50: color-mix(in oklab, #10b981 10%, #111827);
+  --color-emerald-100: color-mix(in oklab, #10b981 18%, #111827);
+  --color-emerald-200: color-mix(in oklab, #10b981 34%, #111827);
+  --color-emerald-700: color-mix(in oklab, #10b981 72%, #ffffff);
+  --color-emerald-800: color-mix(in oklab, #10b981 58%, #ffffff);
+  --color-emerald-900: color-mix(in oklab, #10b981 45%, #ffffff);
+  --color-emerald-950: color-mix(in oklab, #10b981 35%, #ffffff);
+  --color-violet-50: color-mix(in oklab, #8b5cf6 10%, #111827);
+  --color-violet-100: color-mix(in oklab, #8b5cf6 18%, #111827);
+  --color-violet-200: color-mix(in oklab, #8b5cf6 34%, #111827);
+  --color-violet-700: color-mix(in oklab, #8b5cf6 72%, #ffffff);
+  --color-violet-800: color-mix(in oklab, #8b5cf6 58%, #ffffff);
+  --color-violet-900: color-mix(in oklab, #8b5cf6 45%, #ffffff);
+  --color-violet-950: color-mix(in oklab, #8b5cf6 35%, #ffffff);
+  --color-amber-50: color-mix(in oklab, #f59e0b 10%, #111827);
+  --color-amber-100: color-mix(in oklab, #f59e0b 18%, #111827);
+  --color-amber-200: color-mix(in oklab, #f59e0b 34%, #111827);
+  --color-amber-700: color-mix(in oklab, #f59e0b 72%, #ffffff);
+  --color-amber-800: color-mix(in oklab, #f59e0b 58%, #ffffff);
+  --color-amber-900: color-mix(in oklab, #f59e0b 45%, #ffffff);
+  --color-amber-950: color-mix(in oklab, #f59e0b 35%, #ffffff);
+  --color-sky-50: color-mix(in oklab, #0ea5e9 10%, #111827);
+  --color-sky-100: color-mix(in oklab, #0ea5e9 18%, #111827);
+  --color-sky-200: color-mix(in oklab, #0ea5e9 34%, #111827);
+  --color-sky-700: color-mix(in oklab, #0ea5e9 72%, #ffffff);
+  --color-sky-800: color-mix(in oklab, #0ea5e9 58%, #ffffff);
+  --color-sky-900: color-mix(in oklab, #0ea5e9 45%, #ffffff);
+  --color-sky-950: color-mix(in oklab, #0ea5e9 35%, #ffffff);
+  --color-rose-50: color-mix(in oklab, #f43f5e 10%, #111827);
+  --color-rose-100: color-mix(in oklab, #f43f5e 18%, #111827);
+  --color-rose-200: color-mix(in oklab, #f43f5e 34%, #111827);
+  --color-rose-700: color-mix(in oklab, #f43f5e 72%, #ffffff);
+  --color-rose-800: color-mix(in oklab, #f43f5e 58%, #ffffff);
+  --color-rose-900: color-mix(in oklab, #f43f5e 45%, #ffffff);
+  --color-rose-950: color-mix(in oklab, #f43f5e 35%, #ffffff);
+  --color-red-50: color-mix(in oklab, #ef4444 10%, #111827);
+  --color-red-100: color-mix(in oklab, #ef4444 18%, #111827);
+  --color-red-200: color-mix(in oklab, #ef4444 34%, #111827);
+  --color-red-700: color-mix(in oklab, #ef4444 72%, #ffffff);
+  --color-red-800: color-mix(in oklab, #ef4444 58%, #ffffff);
+  --color-red-900: color-mix(in oklab, #ef4444 45%, #ffffff);
+  --color-red-950: color-mix(in oklab, #ef4444 35%, #ffffff);
+  --color-slate-50: #0b1120;
+  --color-slate-100: #1e293b;
+  --color-slate-200: #334155;
+  --color-slate-300: #475569;
+  --color-slate-400: #7c8a9e;
+  --color-slate-500: #94a3b8;
+  --color-slate-600: #cbd5e1;
+  --color-slate-700: #e2e8f0;
+  --color-slate-800: #f1f5f9;
+  --color-slate-900: #f8fafc;
 }
 
 html {

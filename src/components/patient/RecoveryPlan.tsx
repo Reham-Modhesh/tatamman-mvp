@@ -41,7 +41,7 @@ export default function RecoveryPlan({ note }: { note: DischargeNote }) {
       <section className="space-y-3">
         <SectionHeader title="خطة التعليمات المنزلية" />
         {/* List card with dividers, like "التقارير والمستندات" */}
-        <div className="divide-y divide-sh-divider rounded-sh-card border border-sh-line">
+        <div className="divide-y divide-sh-divider rounded-sh-card border border-sh-line bg-sh-card">
           {note.homeCare.map((section) => (
             <div key={section.titleAr} className="flex gap-3 p-4">
               <IconTile icon={CATEGORY_ICONS[section.category]} />

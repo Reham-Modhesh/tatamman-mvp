@@ -7,6 +7,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <title>تطمّن</title>
+    <script>
+      // Apply a saved dark theme before first paint (light is the default).
+      try {
+        if (localStorage.getItem('tatamman-theme') === 'dark') document.documentElement.dataset.theme = 'dark'
+      } catch {}
+    </script>
   </head>
   <body>
     <div id="root"></div>

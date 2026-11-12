@@ -16,7 +16,7 @@ export default function CaseList({ notes, kits, selectedId, onSelect }: Props) {
   const pending = notes.filter((n) => kits[n.id].status === 'pending_review').length
   return (
     <aside className="space-y-4">
-      <div className="rounded-2xl bg-linear-to-br from-teal-700 to-teal-900 p-4 text-white shadow-sm">
+      <div className="rounded-2xl bg-linear-to-br from-[#0f766e] to-[#134e4a] p-4 text-white shadow-sm">
         <div className="flex items-center gap-2 text-sm text-teal-100">
           <Hospital className="size-4" />
           نظام السجل الصحي الإلكتروني (EHR)
@@ -34,7 +34,7 @@ export default function CaseList({ notes, kits, selectedId, onSelect }: Props) {
         </div>
       </div>
 
-      <div className="rounded-2xl border border-slate-200 bg-white shadow-sm">
+      <div className="rounded-2xl border border-slate-200 bg-surface shadow-sm">
         <div className="flex items-center gap-2 border-b border-slate-100 px-4 py-3 text-sm font-semibold text-slate-700">
           <ClipboardList className="size-4 text-teal-600" />
           اختر سجل خروج المريض

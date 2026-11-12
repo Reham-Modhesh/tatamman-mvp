@@ -81,7 +81,7 @@ export default function SehhatyApp({ note, kit, content, initialTab = 'plan' }: 
               <p className="text-[13px] leading-6 text-sh-muted">
                 يراجع المثقف الصحي / الطبيب المعالج تعليمات خروجك حالياً، وستظهر خطتك هنا فور اعتمادها.
               </p>
-              <span className="inline-block rounded-full bg-sh-pill px-3 py-1 text-xs font-medium text-amber-300">بانتظار اعتماد الممارس الصحي</span>
+              <span className="inline-block rounded-full bg-sh-pill px-3 py-1 text-xs font-medium text-sh-warn">بانتظار اعتماد الممارس الصحي</span>
             </Card>
           )}
 

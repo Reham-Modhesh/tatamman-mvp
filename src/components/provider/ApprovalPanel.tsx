@@ -30,7 +30,7 @@ export default function ApprovalPanel({ note, kit, analysisDone, onPublish, onRe
   ]
 
   return (
-    <section className="rounded-2xl border border-slate-200 bg-white shadow-sm lg:sticky lg:top-24">
+    <section className="rounded-2xl border border-slate-200 bg-surface shadow-sm lg:sticky lg:top-24">
       <div className="border-b border-slate-100 px-5 py-4">
         <h2 className="flex items-center gap-2 font-bold text-slate-900">
           <HeartPulse className="size-5 text-teal-600" />
@@ -43,7 +43,7 @@ export default function ApprovalPanel({ note, kit, analysisDone, onPublish, onRe
       <div className="space-y-5 p-5">
         <ol className="relative space-y-4 border-s-2 border-slate-100 ps-5">
           <li className="relative">
-            <span className={`absolute -start-[1.95rem] top-0 grid size-6 place-items-center rounded-full ring-4 ring-white ${published ? 'bg-emerald-500 text-white' : 'bg-amber-400 text-white'}`}>
+            <span className={`absolute -start-[1.95rem] top-0 grid size-6 place-items-center rounded-full ring-4 ring-surface ${published ? 'bg-emerald-500 text-white' : 'bg-amber-400 text-white'}`}>
               {published ? <CircleCheck className="size-4" /> : <Clock className="size-4" />}
             </span>
             <div className={`text-sm font-semibold ${published ? 'text-slate-400 line-through decoration-slate-300' : 'text-amber-700'}`}>
@@ -51,7 +51,7 @@ export default function ApprovalPanel({ note, kit, analysisDone, onPublish, onRe
             </div>
           </li>
           <li className="relative">
-            <span className={`absolute -start-[1.95rem] top-0 grid size-6 place-items-center rounded-full ring-4 ring-white ${published ? 'bg-emerald-500 text-white' : 'bg-slate-200 text-slate-400'}`}>
+            <span className={`absolute -start-[1.95rem] top-0 grid size-6 place-items-center rounded-full ring-4 ring-surface ${published ? 'bg-emerald-500 text-white' : 'bg-slate-200 text-slate-400'}`}>
               <Send className="size-3.5" />
             </span>
             <div className={`text-sm font-semibold ${published ? 'text-emerald-700' : 'text-slate-400'}`}>{STATUS_LABELS.published}</div>
@@ -85,7 +85,7 @@ export default function ApprovalPanel({ note, kit, analysisDone, onPublish, onRe
             </div>
             <button
               onClick={onOpenPatientView}
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-teal-600 px-4 py-3 font-semibold text-white transition hover:bg-teal-700"
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-teal-600 px-4 py-3 font-semibold text-white transition hover:bg-teal-500"
             >
               <Smartphone className="size-5" />
               عرض ما يراه المريض في صحتي
